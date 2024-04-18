@@ -33,7 +33,7 @@ dependencies:
   kakao_flutter_sdk: ^1.9.1+2
   freezed: ^2.5.2
   dio: ^5.4.3+1
-
+  flutter_dotenv: ^5.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,6 +47,7 @@ flutter:
   assets:
     - assets/
     - assets/kakao/
+    - .env
   fonts:
     - family: NotoSansKR
       fonts:
