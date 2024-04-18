@@ -10,14 +10,15 @@ class LoginRepository {
   LoginRepository(this._loginDataSource);
 
   Future<UserModel?> kakaoLogin() async {
-    bool result = await _loginDataSource.kakaoLogin();
-    if (!result) null;
-    return getLoginInfo();
-  }
-
-  Future<UserModel?> getLoginInfo() async {
-    User? loginInfo = await _loginDataSource.getLoginInfo();
-    if (loginInfo == null) return null;
-    return UserModel(uid: loginInfo.id.toString());
+    try {
+      await _loginDataSource.kakaoLogin();
+      User? user = await _loginDataSource.getLoginInfo();
+      if (user == null) {
+        throw Exception('사용자 정보가 없습니다.');
+      }
+      return UserModel(uid: user.id.toString());
+    } catch (e) {
+      rethrow; // 예외를 그대로 상위로 전달
+    }
   }
 }

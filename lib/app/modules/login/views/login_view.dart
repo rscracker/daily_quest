@@ -1,8 +1,6 @@
 import 'package:daily_quest/app/modules/login/view_model/login_view_model.dart';
 import 'package:daily_quest/app/widgets/base_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginView extends BaseView<LoginViewModel> {
   LoginView({Key? key}) : super(key: key);

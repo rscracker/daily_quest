@@ -11,10 +11,29 @@ class LoginViewModel extends GetxController {
   LoginViewModel(this._loginRepository);
 
   Future<void> login() async {
-    UserModel? user = await _loginRepository.kakaoLogin();
-    if (user != null) {
+    try {
+      UserModel? user = await _loginRepository.kakaoLogin();
+      if (user == null) {
+        Get.snackbar('로그인 실패', '로그인 정보를 확인할 수 없습니다.');
+        return;
+      }
+      await checkUser(user);
+    } catch (e) {
+      Get.snackbar('로그인 에러', '로그인 중 문제가 발생했습니다: $e');
+    }
+  }
+
+  Future<void> checkUser(UserModel user) async {
+    UserModel? savedUser = await _userService.getUser(user.uid);
+    if (savedUser == null) {
       _userService.updateUser(user);
-      Get.toNamed(AppRoutes.home);
+      Get.toNamed(AppRoutes.signUp);
+      return;
+    }
+    if (savedUser.isSignedUp) {
+      Get.toNamed(AppRoutes.main);
+    } else {
+      Get.toNamed(AppRoutes.signUp);
     }
   }
 }

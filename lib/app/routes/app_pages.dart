@@ -7,6 +7,9 @@ import 'package:daily_quest/app/modules/login/views/login_view.dart';
 import 'package:daily_quest/app/modules/main/bindings/main_view_binding.dart';
 import 'package:daily_quest/app/modules/main/views/main_view.dart';
 import 'package:daily_quest/app/modules/my_info/bindings/my_info_view_binding.dart';
+import 'package:daily_quest/app/modules/sign_up/bindings/sign_up_binding.dart';
+import 'package:daily_quest/app/modules/sign_up/views/sign_up_view.dart';
+import 'package:daily_quest/app/services/user/bindings/user_binding.dart';
 import 'package:get/get.dart';
 
 class AppPages {
@@ -27,5 +30,7 @@ class AppPages {
         name: '/login',
         page: () => LoginView(),
         bindings: [LoginViewBinding()]),
+    GetPage(
+        name: '/signUp', page: () => SignUpView(), bindings: [SignUpBinding()]),
   ];
 }

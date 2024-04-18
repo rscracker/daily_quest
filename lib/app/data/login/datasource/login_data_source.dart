@@ -2,29 +2,26 @@ import 'package:flutter/services.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginDataSource {
-  Future<bool> kakaoLogin() async {
+  Future<void> kakaoLogin() async {
     if (await isKakaoTalkInstalled()) {
       try {
         await UserApi.instance.loginWithKakaoTalk();
-        return true;
       } catch (error) {
         //print('카카오톡으로 로그인 실패 $error');
         if (error is PlatformException && error.code == 'CANCELED') {
-          return false;
+          throw Exception('로그인 취소');
         }
         try {
           await UserApi.instance.loginWithKakaoAccount();
-          return true;
         } catch (error) {
-          return false;
+          throw Exception(error);
         }
       }
     } else {
       try {
         await UserApi.instance.loginWithKakaoAccount();
-        return true;
       } catch (error) {
-        return false;
+        throw Exception(error);
       }
     }
   }
@@ -38,8 +35,7 @@ class LoginDataSource {
           '\n이메일: ${user.kakaoAccount?.email}');
       return user;
     } catch (error) {
-      print('사용자 정보 요청 실패 $error');
-      return null;
+      throw Exception('사용자 정보 요청 실패 $error');
     }
   }
 }
