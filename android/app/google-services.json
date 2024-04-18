@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638355002819",
+    "project_id": "dailyquest-9d3f1",
+    "storage_bucket": "dailyquest-9d3f1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638355002819:android:f9283197008a30f1169976",
+        "android_client_info": {
+          "package_name": "com.rsc.daily_quest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvb3kE6LO02-LWuEl3_Inv2ATPFvXH1mc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

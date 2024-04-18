@@ -1,6 +1,7 @@
 import 'package:daily_quest/app/modules/main/bindings/main_view_binding.dart';
 import 'package:daily_quest/app/modules/main/views/main_view.dart';
 import 'package:daily_quest/app/routes/app_pages.dart';
+import 'package:daily_quest/app/services/user/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +17,9 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/',
+      initialRoute: '/login',
       initialBinding: BindingsBuilder(() {
-        Get.put(MainViewBinding());
+        Get.put(UserService());
       }),
       getPages: AppPages.routes,
     );
