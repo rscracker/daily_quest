@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:daily_quest/app/data/user/datasource/user_data_source.dart';
-import 'package:daily_quest/app/services/user/model/user_model.dart';
+import 'package:daily_quest/app/data/user/model/user_model.dart';
 
 class UserRepository {
   final UserDataSource _userDataSource;

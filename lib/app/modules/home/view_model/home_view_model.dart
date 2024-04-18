@@ -1,4 +1,3 @@
-import 'package:daily_quest/app/services/user/model/user_model.dart';
 import 'package:daily_quest/app/services/user/user_service.dart';
 import 'package:get/get.dart';
 

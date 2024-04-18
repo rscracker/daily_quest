@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:daily_quest/app/data/login/datasource/login_data_source.dart';
-import 'package:daily_quest/app/services/user/model/user_model.dart';
+import 'package:daily_quest/app/data/user/model/user_model.dart';
 import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 
 class LoginRepository {

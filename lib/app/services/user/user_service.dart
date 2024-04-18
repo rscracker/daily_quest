@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
-import 'package:daily_quest/app/data/user/datasource/user_data_source.dart';
+import 'package:daily_quest/app/data/user/model/user_model.dart';
 import 'package:daily_quest/app/data/user/repository/user_respository.dart';
-import 'package:daily_quest/app/services/user/model/user_model.dart';
 import 'package:get/get.dart';
 
 class UserService extends GetxService {

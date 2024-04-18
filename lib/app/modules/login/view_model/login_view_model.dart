@@ -1,7 +1,6 @@
 import 'package:daily_quest/app/data/login/repository/login_repository.dart';
-import 'package:daily_quest/app/routes/app_pages.dart';
+import 'package:daily_quest/app/data/user/model/user_model.dart';
 import 'package:daily_quest/app/routes/app_routes.dart';
-import 'package:daily_quest/app/services/user/model/user_model.dart';
 import 'package:daily_quest/app/services/user/user_service.dart';
 import 'package:get/get.dart';
 
