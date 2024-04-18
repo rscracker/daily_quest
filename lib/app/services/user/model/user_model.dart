@@ -19,4 +19,20 @@ class UserModel with _$UserModel {
       _$UserModelFromJson(json);
 
   bool get isSignedUp => nickname.isNotEmpty;
+
+  bool checkPoint(int cnt) {
+    return point >= cnt;
+  }
+
+  UserModel changeNickname(String nickname) {
+    return copyWith(nickname: nickname);
+  }
+
+  UserModel increasePoint(int cnt) {
+    return copyWith(point: point + cnt);
+  }
+
+  UserModel decreasePoint(int cnt) {
+    return copyWith(point: point - cnt);
+  }
 }

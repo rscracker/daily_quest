@@ -23,7 +23,7 @@ class MainView extends BaseView<MainViewModel> {
               label: '모임',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.gamepad),
               label: '게임',
             ),
             BottomNavigationBarItem(
@@ -45,9 +45,9 @@ class MainView extends BaseView<MainViewModel> {
     return Obx(() => IndexedStack(
           index: controller.selectedMenu,
           children: [
-            HomeView(),
-            ClubView(),
-            GameView(),
+            const HomeView(),
+            const ClubView(),
+            const GameView(),
             MyInfoView(),
           ],
         ));

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:daily_quest/app/data/user/datasource/user_data_source.dart';
 import 'package:daily_quest/app/data/user/repository/user_respository.dart';
 import 'package:daily_quest/app/services/user/model/user_model.dart';
@@ -10,6 +12,7 @@ class UserService extends GetxService {
   UserService(this._userRepository);
 
   final Rx<UserModel> _user = const UserModel().obs;
+  String get nickname => _user.value.nickname;
 
   void updateUid(String uid) {
     _user.value = _user.value.copyWith(uid: uid);
@@ -33,7 +36,7 @@ class UserService extends GetxService {
   }
 
   Future<void> changeNick(String nickname) async {
-    _user.value = _user.value.copyWith(nickname: nickname);
+    _user.value = _user.value.changeNickname(nickname);
     _userRepository.updateUser(user: _user.value);
   }
 }
