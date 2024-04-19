@@ -45,7 +45,7 @@ class MainView extends BaseView<MainViewModel> {
     return Obx(() => IndexedStack(
           index: controller.selectedMenu,
           children: [
-            const HomeView(),
+            HomeView(),
             const ClubView(),
             const GameView(),
             MyInfoView(),

@@ -1,3 +1,4 @@
+import 'package:daily_quest/app/utils/utils.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'todo_model.freezed.dart';
@@ -24,5 +25,9 @@ class TodoModel with _$TodoModel {
 
   TodoModel changeIsDone() {
     return copyWith(isDone: !isDone);
+  }
+
+  String getFormattedDate() {
+    return Utils.formatDate(scheduledDate);
   }
 }

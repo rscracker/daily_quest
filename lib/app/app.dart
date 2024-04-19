@@ -18,7 +18,7 @@ class App extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
           useMaterial3: true,
           fontFamily: 'NotoSansKR'),
-      initialRoute: '/login',
+      initialRoute: '/main',
       initialBinding: BindingsBuilder(() {
         UserBinding().dependencies();
       }),
